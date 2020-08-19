@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="523.0" prefWidth="602.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pooespol.appmillionarie.SecondaryController">
+    <children>
+      <AnchorPane prefHeight="461.0" prefWidth="541.0">
+         <children>
+            <VBox prefHeight="475.0" prefWidth="186.0" style="-fx-background-color: #e4ea65;">
+               <children>
+                  <Label prefHeight="51.0" prefWidth="194.0" text="         CONFIGURACION" />
+                  <Button mnemonicParsing="false" prefHeight="61.0" prefWidth="165.0" text="Administrar Terminos" />
+                  <Button mnemonicParsing="false" prefHeight="61.0" prefWidth="166.0" text="Administrar Materias" />
+                    <Button fx:id="secondaryButton" onAction="#switchToPrimary" text="Salir" />
+               </children>
+            </VBox>
+            <FlowPane layoutX="192.0" prefHeight="475.0" prefWidth="377.0">
+               <children>
+                  <VBox prefHeight="272.0" prefWidth="381.0">
+                     <children>
+                          <Label prefHeight="28.0" prefWidth="165.0" text="Secondary View" textFill="#252520" />
+                        <FlowPane prefHeight="185.0" prefWidth="382.0">
+                           <children>
+                              <VBox prefHeight="174.0" prefWidth="205.0">
+                                 <children>
+                                    <Label prefHeight="33.0" prefWidth="185.0" text="Año del Termico Academico" />
+                                    <TextField fx:id="textoaño" />
+                                    <Label prefHeight="44.0" prefWidth="153.0" text="Numero del Termino Academico" />
+                                    <ComboBox fx:id="cmbNumerosTerm" prefWidth="150.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </FlowPane>
+                        <HBox prefHeight="52.0" prefWidth="381.0">
+                           <children>
+                              <Button fx:id="btningresartermino" mnemonicParsing="false" onAction="#ingresarTermino" prefHeight="46.0" prefWidth="122.0" text="Ingresar Termino" />
+                              <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="123.0" text="Editar Termino" />
+                              <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="136.0" text="Configurar para Juego" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Label fx:id="labelterminos" prefHeight="25.0" prefWidth="198.0" text="        Terminos Academicos" />
+                  <TableView fx:id="losterminos" prefHeight="138.0" prefWidth="368.0">
+                    <columns>
+                      <TableColumn fx:id="colaño" prefWidth="198.0" text="Año" />
+                      <TableColumn fx:id="colnumero" prefWidth="179.0" text="Numero" />
+                    </columns>
+                  </TableView>
+               </children>
+            </FlowPane>
+         </children>
+      </AnchorPane>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>
