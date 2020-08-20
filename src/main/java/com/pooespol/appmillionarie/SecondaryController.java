@@ -49,6 +49,12 @@ public class SecondaryController {
     TextField textoaño;
     @FXML
     Button btningresartermino;
+    @FXML
+    FlowPane myflowpane;
+    @FXML
+    Button admterminos;
+    @FXML
+    VBox myvbox;
     /*
     @FXML
     FlowPane cambiaflow;
@@ -145,7 +151,20 @@ public class SecondaryController {
     @FXML
     public void ingresarTermino(){
         System.out.println("Guardando Termino Academico");
-        TerminoAcademico ta= new TerminoAcademico(textoaño.getText(), (String) cmbNumerosTerm.getValue());
+        String añotermino= textoaño.getText();
+        String numbtermino= (String) cmbNumerosTerm.getValue();
+        if(terminoAcademicoExiste(añotermino, numbtermino)){
+            System.out.println("El termino ingresado ya existe");
+            Alert alertIngreso = new Alert(Alert.AlertType.INFORMATION);
+            alertIngreso.setTitle("informacion de ingreso de termino");
+            alertIngreso.setHeaderText("ingresó informacion ya existente");
+            alertIngreso.setContentText("Termino ingresado ya existe\nINGRESE UNO NUEVO");
+            alertIngreso.showAndWait();
+            
+            añotermino= textoaño.getText();
+            numbtermino= (String) cmbNumerosTerm.getValue();
+        }else{
+        TerminoAcademico ta= new TerminoAcademico(añotermino, numbtermino);
         terminosAc.add(ta);
         //System.out.println("Nuevo Termino: "+ta); //me agrega a la lista pero no al archivo
      
@@ -159,12 +178,10 @@ public class SecondaryController {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText("Resultado de la operacion");
-            alert.setContentText("Nuevp termino agregado exitosamente");
+            alert.setContentText("Nuevo termino agregado exitosamente");
 
             alert.showAndWait();
             App.setRoot("secondary");
-        
-        
         }catch(IOException ex){
             ex.printStackTrace();
             System.out.println("IOException:" + ex.getMessage());
@@ -175,7 +192,12 @@ public class SecondaryController {
                 ex.printStackTrace();
             }
         }
+    }
         
+    }
+    public boolean terminoAcademicoExiste(String yy, String number){
+        TerminoAcademico term = new TerminoAcademico(yy,number);
+        return terminosAc.contains(term);
     }
 
 

@@ -26,10 +26,10 @@
             </VBox>
             <FlowPane layoutX="192.0" prefHeight="475.0" prefWidth="377.0">
                <children>
-                  <VBox prefHeight="272.0" prefWidth="381.0">
+                  <VBox prefHeight="467.0" prefWidth="389.0">
                      <children>
                           <Label prefHeight="28.0" prefWidth="165.0" text="Secondary View" textFill="#252520" />
-                        <FlowPane prefHeight="185.0" prefWidth="382.0">
+                        <FlowPane prefHeight="176.0" prefWidth="389.0">
                            <children>
                               <VBox prefHeight="174.0" prefWidth="205.0">
                                  <children>
@@ -44,19 +44,18 @@
                         <HBox prefHeight="52.0" prefWidth="381.0">
                            <children>
                               <Button fx:id="btningresartermino" mnemonicParsing="false" onAction="#ingresarTermino" prefHeight="46.0" prefWidth="122.0" text="Ingresar Termino" />
-                              <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="123.0" text="Editar Termino" />
                               <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="136.0" text="Configurar para Juego" />
                            </children>
                         </HBox>
+                        <Label fx:id="labelterminos" prefHeight="25.0" prefWidth="198.0" text="        Terminos Academicos" />
+                        <TableView fx:id="losterminos" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                            <TableColumn fx:id="colaño" prefWidth="187.0" text="Año" />
+                            <TableColumn fx:id="colnumero" prefWidth="201.0" text="Numero" />
+                          </columns>
+                        </TableView>
                      </children>
                   </VBox>
-                  <Label fx:id="labelterminos" prefHeight="25.0" prefWidth="198.0" text="        Terminos Academicos" />
-                  <TableView fx:id="losterminos" prefHeight="138.0" prefWidth="368.0">
-                    <columns>
-                      <TableColumn fx:id="colaño" prefWidth="198.0" text="Año" />
-                      <TableColumn fx:id="colnumero" prefWidth="179.0" text="Numero" />
-                    </columns>
-                  </TableView>
                </children>
             </FlowPane>
          </children>
